@@ -1,9 +1,6 @@
 /*
-
-
         WarThunder BR GUI
         calculates BR in WarThunder using a GUI.
-
    This Br calculator is based off of the formula:
    
    if [Plane A] < .6 BR of [Plane B] or [Plane C]
@@ -17,11 +14,11 @@
    if [Plane A] - [Plane B or C] > 2.0
    
     BR = [Plane A]
-
-
                      9/7/2015
-
-               -Bezalel
+               -BezzTaru
+    *Updated 5/26/2016
+         * Changed Date.
+         * Added String text for clarity.
 */
 
 import java.awt.*;      // For Dimensions.
@@ -64,15 +61,15 @@ public class WtBrGui implements ActionListener
    
    // layout
    JPanel north = new JPanel(new GridLayout(3, 2));
-   north.add(new JLabel("Plane 1: "));
+   north.add(new JLabel("(highest)Plane 1: "));
    north.add(plane1Field);
-   north.add(new JLabel("Plane 2: "));
+   north.add(new JLabel("(2nd highest)Plane 2: "));
    north.add(plane2Field);
-   north.add(new JLabel("Plane 3: "));
+   north.add(new JLabel("(3rd highest)Plane 3: "));
    north.add(plane3Field);
    
    // overall frame
-   frame = new JFrame("War Thunder BR Calculator  _Bezz_ 9/2015");
+   frame = new JFrame("War Thunder BR Calculator  _BezzTaru_ 5/2016");
    frame.setPreferredSize(new Dimension(400, 150));
    frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
    frame.setLayout(new BorderLayout());
@@ -103,7 +100,7 @@ public class WtBrGui implements ActionListener
          double br = (((plane2 + plane3) / 2.0) + plane1) / 2.0;
          
          br = brRound(br);// round and formatting
-         brLabel.setText("BR " + br);
+         brLabel.setText("                                              BR " + br);
       }
       
       else
@@ -112,7 +109,7 @@ public class WtBrGui implements ActionListener
          double br = plane1;
 //         br = brRound(br);
          
-         brLabel.setText("BR " + br);
+         brLabel.setText("                                              BR " + br);
       }
    }
    public static double brRound(double br)
