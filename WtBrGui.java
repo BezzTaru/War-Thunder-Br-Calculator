@@ -1,9 +1,6 @@
 /*
-
-
         WarThunder BR GUI
         calculates BR in WarThunder using a GUI.
-
    This Br calculator is based off of the formula:
    
    if [Plane A] < .6 BR of [Plane B] or [Plane C]
@@ -17,11 +14,11 @@
    if [Plane A] - [Plane B or C] > 2.0
    
     BR = [Plane A]
-
-
                      9/7/2015
-
                -BezzTaru
+    *Updated 5/26/2016
+         * Changed Date.
+         * Added String text for clarity.
 */
 
 import java.awt.*;      // For Dimensions.
@@ -103,7 +100,7 @@ public class WtBrGui implements ActionListener
          double br = (((plane2 + plane3) / 2.0) + plane1) / 2.0;
          
          br = brRound(br);// round and formatting
-         brLabel.setText("BR " + br);
+         brLabel.setText("                                              BR " + br);
       }
       
       else
@@ -112,7 +109,7 @@ public class WtBrGui implements ActionListener
          double br = plane1;
 //         br = brRound(br);
          
-         brLabel.setText("BR " + br);
+         brLabel.setText("                                              BR " + br);
       }
    }
    public static double brRound(double br)
